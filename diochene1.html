@@ -1,0 +1,435 @@
+<!doctype html>
+<html lang="it">
+<head>
+
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+
+<title>Fisiomotion - Valutazione Gratuita a Ponte Felcino</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#f4f8fa;
+--card:#ffffff;
+--accent:#04d2da;
+--accent2:#5daa01;
+--text:#222;
+--muted:#666;
+--maxw:1100px;
+--radius:12px;
+}
+
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+/* HEADER */
+
+header.site-header{
+text-align:center;
+padding:26px 20px;
+background:linear-gradient(
+180deg,
+rgba(255,255,255,0.9),
+rgba(255,255,255,0.7)
+);
+position:sticky;
+top:0;
+z-index:20;
+}
+
+.logo{
+max-width:460px;
+width:70%;
+height:auto;
+display:block;
+margin:0 auto;
+}
+
+/* HERO */
+
+.hero{
+max-width:var(--maxw);
+margin:auto;
+padding:30px 20px;
+}
+
+.hero-top{
+display:grid;
+grid-template-columns:1.3fr 1fr;
+gap:40px;
+align-items:center;
+}
+
+.hero-image img{
+width:100%;
+max-height:420px;
+object-fit:cover;
+border-radius:14px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero-text h1{
+margin-top:0;
+font-size:32px;
+color:#03393f;
+}
+
+.lead{
+font-size:17px;
+margin-bottom:15px;
+}
+
+.benefits{
+padding-left:20px;
+}
+
+.benefits li{
+margin-bottom:10px;
+font-size:15px;
+}
+
+/* FORM */
+
+.hero-form{
+margin-top:35px;
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.form-points{
+font-size:16px;
+color:#304a4a;
+margin-bottom:15px;
+text-align:center;
+}
+
+.form-points ul{
+list-style:none;
+padding:0;
+margin:0;
+}
+
+.form-points li{
+margin-bottom:8px;
+}
+
+/* CARD FORM */
+
+.card-form{
+background:#d6d9e0;
+padding:25px;
+border-radius:10px;
+max-width:420px;
+width:100%;
+box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+
+.card-form h3{
+margin-top:0;
+color:#044b52;
+text-align:center;
+}
+
+.field{
+margin-bottom:10px;
+}
+
+input,textarea{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:14px;
+}
+
+textarea{
+min-height:90px;
+}
+
+.btn-primary{
+background:var(--accent);
+color:white;
+border:none;
+padding:13px;
+width:100%;
+border-radius:10px;
+font-weight:600;
+cursor:pointer;
+box-shadow:0 8px 20px rgba(4,210,218,0.14);
+}
+
+.small{
+font-size:14px;
+color:#555;
+}
+
+.small-quiet{
+font-size:13px;
+text-align:center;
+margin-top:10px;
+}
+
+/* SEZIONE INFO */
+
+main{
+max-width:var(--maxw);
+margin:auto;
+padding:40px 20px;
+}
+
+.info-section{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+align-items:start;
+}
+
+.info-section img{
+width:100%;
+border-radius:10px;
+}
+
+.whoami h3{
+margin-top:0;
+color:#03393f;
+}
+
+/* MAPPA */
+
+iframe{
+width:100%;
+height:380px;
+border:0;
+border-radius:10px;
+margin-top:15px;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:25px;
+color:#666;
+font-size:14px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+.hero-top{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero-image{
+max-width:320px;
+margin:auto;
+}
+
+.hero-form{
+width:90%;
+}
+
+.info-section{
+grid-template-columns:1fr;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header class="site-header">
+<img src="logo.png" class="logo" alt="Fisiomotion logo">
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-top">
+
+<div class="hero-image">
+<img src="foto.jpg" alt="Trattamento fisioterapia">
+</div>
+
+<div class="hero-text">
+
+<h1>Ritrova il movimento. Libera il tuo corpo dal dolore.</h1>
+
+<p class="lead">
+Prenota la tua <strong>valutazione gratuita</strong> a <strong>Ponte Felcino (Perugia)</strong> — 
+un primo incontro dedicato a capire la causa del dolore e a disegnare un percorso su misura per te.
+</p>
+
+<ul class="benefits">
+
+<li><strong>Approccio manuale e mirato:</strong> Manipolazione fasciale per intervenire sulla radice del problema.</li>
+
+<li><strong>Supporto strumentale quando serve:</strong> Tecar, laser e ultrasuono per ottimizzare il recupero.</li>
+
+<li><strong>Un percorso chiaro:</strong> Valutazione, spiegazione del problema e piano personalizzato.</li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="hero-form">
+
+<div class="form-points">
+<ul>
+<li>✔ Valutazione gratuita</li>
+<li>✔ Nessun impegno</li>
+<li>✔ Approccio personalizzato</li>
+</ul>
+</div>
+
+<div class="card-form" id="fisiomotion-form">
+
+<h3>Prenota la tua valutazione gratuita</h3>
+
+<p class="small">
+Compila i tuoi dati, ti ricontatterò personalmente per fissare l'appuntamento.
+</p>
+
+<form id="fisiomotion-form-form">
+
+<div class="field">
+<input type="text" name="nome" placeholder="Il tuo nome" required>
+</div>
+
+<div class="field">
+<input type="tel" name="telefono" placeholder="Telefono" required>
+</div>
+
+<div class="field">
+<input type="email" name="email" placeholder="Email" required>
+</div>
+
+<div class="field">
+<textarea name="messaggio" placeholder="Raccontami brevemente il tuo problema (facoltativo)"></textarea>
+</div>
+
+<button class="btn-primary" type="submit">
+Prenota la valutazione gratuita
+</button>
+
+</form>
+
+<div class="small-quiet">
+Oppure scrivimi su WhatsApp:
+<a href="https://wa.me/393495719341">349 571 9341</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SEZIONE INFO -->
+
+<main>
+
+<div class="info-section">
+
+<img src="foto-riccardo.jpg" alt="Riccardo Fiocchetti">
+
+<div class="whoami">
+
+<h3>Chi sono</h3>
+
+<p>
+Sono <strong>Riccardo Fiocchetti</strong>, massofisioterapista a Ponte Felcino (Perugia).
+Aiuto le persone a risolvere dolori muscolari e articolari con un approccio manuale e personalizzato.
+</p>
+
+<p>
+La mia tecnica principale è la <strong>manipolazione fasciale (metodo Stecco)</strong>, 
+integrata quando serve con tecar, laser e ultrasuono.
+</p>
+
+<h3>Cosa posso aiutare a risolvere</h3>
+
+<ul>
+<li>Mal di schiena e lombalgia</li>
+<li>Dolore cervicale e mal di testa muscolo-tensivo</li>
+<li>Dolore alla spalla e cuffia dei rotatori</li>
+<li>Sciatalgia e dolori agli arti</li>
+</ul>
+
+</div>
+
+</div>
+
+
+<h3>Dove trovarmi</h3>
+
+<p>
+Studio Fisiomotion<br>
+Via Giacomo Puccini 63<br>
+Ponte Felcino (Perugia)<br>
+📞 349 571 9341
+</p>
+
+<iframe src="https://www.google.com/maps?q=via+giacomo+puccini+63+perugia&output=embed"></iframe>
+
+</main>
+
+
+<footer>
+© <span id="year"></span> Fisiomotion — Riccardo Fiocchetti
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+<script>
+
+(function(){
+emailjs.init("NPqLkH-WtLNXHt9mV");
+})();
+
+const form=document.getElementById('fisiomotion-form-form');
+
+form.addEventListener('submit',function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+'service_fzlggc1',
+'template_061fhg7',
+this
+).then(function(){
+
+window.location.href='grazie.html';
+
+});
+
+});
+
+document.getElementById('year').textContent=new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
