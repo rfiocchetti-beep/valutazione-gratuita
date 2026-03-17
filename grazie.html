@@ -4,7 +4,27 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Grazie - Fisiomotion</title>
+
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Meta Pixel Code -->
+<script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window, document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '4336943133255553'); // inserisci qui il tuo Pixel ID
+  fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4336943133255553&ev=PageView&noscript=1"
+/></noscript>
+
 <style>
   body{
     margin:0;
@@ -37,10 +57,7 @@
     font-weight:600;
     transition: background 0.3s;
   }
-  a.btn:hover{
-    background:#029ca3;
-  }
-  /* Pulsante WhatsApp */
+  a.btn:hover{background:#029ca3;}
   .whatsapp-btn{
     display:inline-block;
     margin-top:20px;
@@ -52,9 +69,7 @@
     font-weight:600;
     transition: background 0.3s;
   }
-  .whatsapp-btn:hover{
-    background-color:#1ebe57;
-  }
+  .whatsapp-btn:hover{background-color:#1ebe57;}
 </style>
 </head>
 <body>
@@ -66,12 +81,10 @@
     <div class="time"><strong>Lunedì – Sabato: 8:30 – 13:00</strong></div>
   </div>
 
-  <!-- Pulsante WhatsApp -->
   <div>
     <a class="whatsapp-btn" href="https://wa.me/393495719341" target="_blank">
       Scrivimi su WhatsApp
     </a>
   </div>
-
- </body>
+</body>
 </html>
