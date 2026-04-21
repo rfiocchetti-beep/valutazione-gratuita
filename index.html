@@ -1,320 +1,539 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Fisiomotion - Valutazione Gratuita a Ponte Felcino (Perugia)</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Meta Pixel Code -->
-<script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '4336943133255553');
-  fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4336943133255553&ev=PageView&noscript=1"
-/></noscript>
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Fisiomotion – Riccardo Fiocchetti | Ponte Felcino (Perugia)</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet"/>
 <style>
-  :root{
-    --bg:#f4f8fa; --card:#ffffff; --accent:#04d2da; --accent-2:#5daa01;
-    --muted:#666; --text:#222; --radius:12px; --maxw:1100px;
-    --urgency:#c0392b; --urgency-bg:#fff5f5;
-  }
-  *{box-sizing:border-box}
-  body{margin:0;font-family:'Poppins',sans-serif;background:var(--bg);color:var(--text);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#1877F2;
+  --blue-dark:#1257c0;
+  --blue-deep:#0d3f8f;
+  --red:#E82626;
+  --red-dark:#c41e1e;
+  --green:#27AE60;
+  --text:#111;
+  --white:#fff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Open Sans',sans-serif;color:var(--text);background:#fff;overflow-x:hidden}
 
-  /* --- BANNER URGENZA --- */
-  .urgency-banner{
-    background:var(--urgency);
-    color:#fff;
-    text-align:center;
-    padding:12px 20px;
-    font-size:15px;
-    font-weight:600;
-    letter-spacing:0.01em;
-    position:sticky;
-    top:0;
-    z-index:30;
-  }
-  .urgency-banner span{
-    background:rgba(255,255,255,0.2);
-    border-radius:6px;
-    padding:2px 10px;
-    margin-left:8px;
-    font-weight:700;
-  }
+/* GEO BANNER */
+.geo-banner{
+  background:var(--blue);color:#fff;text-align:center;
+  padding:1.1rem 1.5rem;
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.2rem,5vw,1.9rem);font-weight:600;line-height:1.3;
+}
 
-  /* --- HEADER --- */
-  header.site-header{text-align:center;padding:20px 20px 14px;background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.8));}
-  .logo{max-width:380px;width:65%;display:block;margin:0 auto;height:auto;}
+/* HERO */
+.hero{background:#fff;text-align:center;padding:3rem 1.5rem 2rem;}
+.hero-case{
+  background:#f0f6ff;border-left:4px solid var(--blue);
+  border-radius:8px;padding:1.2rem 1.4rem;
+  text-align:left;max-width:600px;margin:0 auto 1.8rem;
+  font-size:.95rem;line-height:1.65;color:#333;
+}
+.hero-case strong{color:var(--blue-deep)}
+.case-label{
+  font-family:'Oswald',sans-serif;font-size:.8rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--blue);margin-bottom:.5rem;display:block;
+}
+.hero h1{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.9rem,7.5vw,3rem);font-weight:700;line-height:1.15;
+  color:#111;margin-bottom:1.2rem;
+}
+.hero-sub{
+  font-size:clamp(1rem,4vw,1.25rem);font-weight:700;
+  color:var(--blue);line-height:1.6;max-width:600px;margin:0 auto 2rem;
+}
 
-  /* --- STORIA HERO --- */
-  .story-banner{
-    max-width:var(--maxw);
-    margin:20px auto 0;
-    padding:0 20px;
-  }
-  .story-card{
-    background:#fff;
-    border-left:5px solid var(--urgency);
-    border-radius:var(--radius);
-    padding:22px 28px;
-    box-shadow:0 4px 18px rgba(0,0,0,0.07);
-  }
-  .story-card .story-label{
-    font-size:12px;
-    font-weight:700;
-    text-transform:uppercase;
-    letter-spacing:0.08em;
-    color:var(--urgency);
-    margin-bottom:8px;
-  }
-  .story-card h2{
-    margin:0 0 10px;
-    font-size:20px;
-    color:#03393f;
-    line-height:1.3;
-  }
-  .story-card p{
-    margin:0;
-    color:#304a4a;
-    font-size:15px;
-    line-height:1.6;
-  }
-  .story-card p strong{color:#03393f;}
+/* CTA BUTTON */
+.btn-cta{
+  display:block;width:100%;max-width:560px;margin:0 auto;
+  background:var(--red);color:#fff;
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.1rem,5vw,1.45rem);font-weight:700;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:1.1rem 1rem;border:3px solid #000;border-radius:4px;
+  cursor:pointer;text-decoration:none;text-align:center;
+  transition:background .2s,transform .15s;
+}
+.btn-cta:hover{background:var(--red-dark);transform:scale(1.02)}
+.btn-cta:active{transform:scale(.98)}
 
-  /* --- HERO --- */
-  .hero{max-width:var(--maxw);margin:20px auto;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 30px rgba(15,30,40,0.08);background:var(--card);}
-  .hero-visual{position:relative;height:500px;background-image:url('foto.jpg');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;}
-  .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.15));mix-blend-mode:multiply;pointer-events:none;}
-  .hero-content{position:relative;z-index:2;padding:28px 28px;text-align:left;display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start;}
-  .hero-text h1{margin:0 0 10px 0;font-size:26px;line-height:1.2;color:#03393f;}
-  .hero-text p.lead{margin:0 0 16px 0;color:#254545;font-size:16px;line-height:1.55;}
-  .benefits{margin:14px 0 0 0;padding-left:18px;color:#2b4b4a;}
-  .benefits li{margin-bottom:10px;font-size:15px}
+.btn-wa{
+  display:block;width:100%;max-width:560px;margin:.9rem auto 0;
+  background:#25D366;color:#fff;
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1rem,4.5vw,1.3rem);font-weight:700;
+  letter-spacing:.04em;text-transform:uppercase;
+  padding:1rem 1rem;border:3px solid #1a9e4b;border-radius:4px;
+  cursor:pointer;text-decoration:none;text-align:center;
+  transition:background .2s,transform .15s;
+}
+.btn-wa:hover{background:#1eb358;transform:scale(1.02)}
 
-  /* --- FORM --- */
-  .card-form{background:#d6d9e0;border-radius:10px;padding:20px;box-shadow:0 6px 18px rgba(18,40,45,0.06);border:1px solid rgba(2,44,50,0.04);}
-  .card-form h3{margin:0 0 4px 0;color:#044b52;font-size:18px}
-  .card-form .form-offer{
-    background:var(--urgency-bg);
-    border:1px solid #f5c6c6;
-    border-radius:8px;
-    padding:8px 12px;
-    font-size:13px;
-    color:var(--urgency);
-    font-weight:600;
-    margin-bottom:12px;
-  }
-  .card-form p.small{margin:0 0 12px 0;color:var(--muted);font-size:14px}
-  .field{margin-bottom:10px}
-  input[type="text"], input[type="tel"], input[type="email"], textarea{width:100%;padding:10px 12px;border-radius:8px;border:1px solid #d7e6e6;font-size:15px;color:var(--text);background:#fff;}
-  textarea{min-height:80px; resize:vertical}
-  .btn-primary{display:inline-block;background:var(--accent);color:#fff;padding:13px 16px;border-radius:10px;font-weight:700;border:none;cursor:pointer;width:100%;font-size:15px;box-shadow:0 8px 20px rgba(4,210,218,0.2);transition:transform .12s ease, box-shadow .12s ease;}
-  .btn-primary:hover{transform:translateY(-1px);box-shadow:0 10px 24px rgba(4,210,218,0.3);}
-  .btn-primary:active{transform:translateY(1px)}
-  .small-quiet{font-size:13px;color:var(--muted);text-align:center;margin-top:10px}
+/* OFFER SECTION */
+.offer-section{background:#fff;text-align:center;padding:2.5rem 1.5rem;}
+.offer-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.4rem,6vw,2.3rem);font-weight:700;font-style:italic;
+  margin-bottom:1.4rem;line-height:1.25;
+}
+.price-box{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.4rem,6vw,2.1rem);font-weight:700;
+  line-height:1.5;margin-bottom:1.8rem;
+}
+.price-new{color:var(--green);font-size:1.3em}
+.price-old{color:var(--red);text-decoration:line-through}
+.badge-urgency{
+  display:inline-block;background:#fff3cd;color:#856404;
+  border:1px solid #ffc107;border-radius:20px;
+  padding:.35rem 1rem;font-size:.88rem;font-weight:700;
+  margin-bottom:1.2rem;letter-spacing:.03em;
+}
 
-  /* --- SEZIONE COME FUNZIONA --- */
-  .how-section{
-    max-width:var(--maxw);
-    margin:0 auto 10px;
-    padding:30px 20px 0;
-  }
-  .how-section h2{color:#03393f;font-size:20px;margin-bottom:18px;text-align:center;}
-  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-  .how-card{background:#fff;border-radius:var(--radius);padding:18px 16px;box-shadow:0 4px 14px rgba(0,0,0,0.05);text-align:center;}
-  .how-card .icon{font-size:28px;margin-bottom:10px;}
-  .how-card h4{margin:0 0 6px;color:#03393f;font-size:15px;}
-  .how-card p{margin:0;font-size:13.5px;color:#555;line-height:1.5;}
+/* BLUE SECTION */
+.blue-section{background:var(--blue);padding:2.5rem 1.5rem;}
+.blue-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.7rem);font-weight:700;
+  color:#fff;text-align:center;margin-bottom:2rem;line-height:1.2;
+}
+.problem-card{
+  background:#fff;border-radius:12px;padding:1.8rem 1.2rem;
+  text-align:center;margin-bottom:1.2rem;
+  max-width:560px;margin-left:auto;margin-right:auto;
+}
+.icon-circle{
+  width:120px;height:120px;border-radius:50%;
+  border:3px solid #555;overflow:hidden;
+  margin:0 auto 1.2rem;background:#eee;
+  display:flex;align-items:center;justify-content:center;font-size:3rem;
+}
+.problem-card h3{
+  font-size:clamp(1.05rem,4.5vw,1.45rem);font-weight:700;line-height:1.35;
+}
 
-  /* --- CHI SONO --- */
-  main.section{max-width:var(--maxw);margin:0 auto;padding:30px 20px;}
-  .info-section{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start;margin-bottom:24px;}
-  .info-section img{width:100%;border-radius:10px;display:block;}
-  .whoami{background-color:transparent;padding:0;border:0;box-shadow:none;}
-  .whoami h3{margin-top:0;color:#03393f;}
-  .whoami p{margin:8px 0;color:#304a4a;font-size:15px;line-height:1.5;}
-  .orari{max-width:320px;margin:18px auto;padding:12px 14px;background:#fff;border-radius:10px;box-shadow:0 4px 12px rgba(0,0,0,0.05);font-size:15px;color:#03393f;}
-  .orari .label{font-weight:600} .orari .time{font-weight:800;font-size:16px;margin-top:6px}
-  iframe{width:100%;height:400px;border:0;margin-top:10px;border-radius:10px;}
-  footer.site-footer{text-align:center;padding:22px 16px;color:var(--muted);font-size:14px;}
+/* COME FUNZIONA */
+.how-section{background:#f8f9ff;padding:2.5rem 1.5rem;max-width:620px;margin:0 auto;}
+.how-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;
+  text-align:center;margin-bottom:2rem;
+}
+.step-item{
+  display:flex;gap:1rem;margin-bottom:1.8rem;align-items:flex-start;
+  background:#fff;border-radius:10px;padding:1.2rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.step-icon{
+  flex-shrink:0;width:48px;height:48px;
+  background:var(--blue);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.5rem;
+}
+.step-item h3{font-size:1.05rem;font-weight:700;margin-bottom:.35rem;color:var(--blue-deep)}
+.step-item p{font-size:.95rem;color:#333;line-height:1.65;}
 
-  /* --- BTN MOBILE --- */
-  .btn-scroll{display:none;margin:16px auto;background:#04d2da;color:#fff;padding:13px 20px;border-radius:10px;text-decoration:none;font-weight:700;text-align:center;transition:background 0.3s;}
-  .btn-scroll:hover{background:#029ca3;}
+/* WHAT YOU GET */
+.what-section{background:#fff;padding:2.5rem 1.5rem;max-width:620px;margin:0 auto;}
+.what-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;
+  text-align:center;margin-bottom:2rem;
+}
+.check-item{display:flex;gap:1rem;margin-bottom:1.8rem;align-items:flex-start;}
+.check-icon{
+  flex-shrink:0;width:36px;height:36px;
+  background:var(--green);border-radius:6px;
+  display:flex;align-items:center;justify-content:center;
+  color:#fff;font-size:1.3rem;font-weight:700;
+}
+.check-item h3{font-size:1.05rem;font-weight:700;margin-bottom:.35rem;}
+.check-item p{font-size:.95rem;color:#333;line-height:1.65;}
 
-  @media(max-width:920px){
-    .hero-content{grid-template-columns:1fr; padding:18px}
-    .info-section{grid-template-columns:1fr}
-    .info-section img{max-width:420px;margin:0 auto}
-    .btn-scroll{display:block;}
-    .how-grid{grid-template-columns:1fr;}
-  }
+/* URGENCY */
+.urgency-strip{
+  background:var(--blue);color:#fff;text-align:center;
+  padding:1rem 1.5rem;
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.2rem,5.5vw,1.9rem);font-weight:700;
+  letter-spacing:.04em;text-decoration:underline;
+}
+
+/* TESTIMONIALS */
+.testimonials{background:#fff;padding:2.5rem 1.5rem;max-width:620px;margin:0 auto;}
+.testimonials h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;
+  text-align:center;margin-bottom:2rem;
+}
+.review-card{
+  border:1px solid #e0e0e0;border-radius:10px;
+  padding:1.4rem 1.2rem;margin-bottom:1.2rem;
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.stars{color:#F5A623;font-size:1.2rem;letter-spacing:.1em;margin-bottom:.7rem}
+.review-text{font-style:italic;font-size:.97rem;color:#333;line-height:1.65;margin-bottom:1rem;}
+.reviewer{display:flex;align-items:center;gap:.8rem;}
+.reviewer-avatar{
+  width:48px;height:48px;border-radius:50%;background:#ddd;
+  overflow:hidden;display:flex;align-items:center;justify-content:center;
+  font-size:1.4rem;
+}
+.reviewer-name{font-weight:700;font-size:1rem;}
+
+/* CHI SONO */
+.about-section{background:var(--blue);padding:2.5rem 1.5rem;}
+.about-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;
+  color:#fff;text-align:center;margin-bottom:1.5rem;
+}
+.about-photo{
+  width:100%;max-width:340px;border-radius:12px;
+  display:block;margin:0 auto 1.5rem;
+  border:4px solid rgba(255,255,255,.3);
+}
+.about-photo-ph{
+  width:100%;max-width:340px;border-radius:12px;
+  margin:0 auto 1.5rem;background:#1257c0;height:280px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;color:#fff;border:2px dashed rgba(255,255,255,.4);
+}
+.about-quote{
+  background:var(--blue-deep);border-radius:10px;
+  padding:1.8rem 1.4rem;color:#fff;
+  font-size:clamp(.98rem,3.8vw,1.2rem);line-height:1.75;
+  text-align:left;max-width:560px;margin:0 auto;
+}
+.about-quote strong{color:#a8d4ff;}
+
+/* PROBLEMI CHE RISOLVO */
+.problems-list{
+  background:#fff;padding:2.5rem 1.5rem;max-width:620px;margin:0 auto;
+}
+.problems-list h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;
+  text-align:center;margin-bottom:1.5rem;
+}
+.prob-item{
+  display:flex;align-items:center;gap:.8rem;
+  padding:.75rem 0;border-bottom:1px solid #eee;
+  font-size:1rem;font-weight:600;
+}
+.prob-dot{
+  width:12px;height:12px;border-radius:50%;
+  background:var(--blue);flex-shrink:0;
+}
+
+/* ADDRESS + FORM */
+.address-section{background:#fff;padding:2.5rem 1.5rem;text-align:center;max-width:620px;margin:0 auto;}
+.address-section h2{
+  font-family:'Oswald',sans-serif;
+  font-size:clamp(1.4rem,6vw,2.3rem);font-weight:700;font-style:italic;margin-bottom:1.8rem;
+}
+.address-block{margin-bottom:2rem;}
+.address-block h3{font-weight:700;font-size:1.15rem;margin-bottom:.3rem;}
+.address-block p{color:#555;font-size:.95rem;margin-bottom:.8rem;}
+.map-placeholder{
+  width:100%;height:160px;background:#d0e8ff;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:.9rem;color:#555;border:1px solid #b0cfe8;
+}
+.orari-box{
+  background:#f0f6ff;border-radius:8px;padding:1rem 1.2rem;
+  text-align:left;margin-bottom:1.5rem;
+  border-left:4px solid var(--blue);
+}
+.orari-box h3{font-weight:700;margin-bottom:.4rem;color:var(--blue-deep);}
+.orari-box p{font-size:.95rem;color:#333;}
+
+/* FORM */
+.form-box{
+  background:#f5f8ff;border-radius:10px;padding:1.8rem 1.2rem;
+  margin-top:1.5rem;border:2px solid var(--blue);
+}
+.form-box h3{font-family:'Oswald',sans-serif;font-size:1.4rem;margin-bottom:.5rem;color:var(--blue);}
+.form-box p{font-size:.9rem;color:#666;margin-bottom:1.2rem;}
+.form-input{
+  width:100%;padding:.85rem 1rem;
+  border:1px solid #ccc;border-radius:6px;
+  font-size:1rem;margin-bottom:.8rem;
+  font-family:'Open Sans',sans-serif;
+}
+
+/* FOOTER */
+footer{
+  background:#222;color:#bbb;text-align:center;
+  padding:2rem 1.5rem;font-size:.82rem;line-height:1.8;
+}
+footer a{color:#90b8f8;text-decoration:none;}
+footer a:hover{text-decoration:underline;}
+
+.mt-btn{margin-top:1.5rem;}
+.section-wrap{max-width:620px;margin:0 auto;}
 </style>
 </head>
 <body>
 
-<!-- BANNER URGENZA -->
-<div class="urgency-banner">
-  🎁 Valutazione Gratuita — Solo per i primi 10 pazienti <span>Fino al 31 Marzo</span>
+<!-- GEO BANNER -->
+<div class="geo-banner">
+  📍 Offerta Speciale Per Perugia e Dintorni — <span style="color:#ffe066;">🎁 Valutazione Gratuita</span>
 </div>
 
-<header class="site-header" role="banner">
-  <img src="logo.png" alt="Fisiomotion - logo" class="logo">
-</header>
+<!-- HERO -->
+<section class="hero">
+  <div class="section-wrap">
 
-<!-- STORIA REALE -->
-<div class="story-banner">
-  <div class="story-card">
-    <div class="story-label">📖 Caso reale</div>
-    <h2>Non riusciva ad alzare il braccio da mesi. Il problema non era nella spalla — era nella mano.</h2>
-    <p>Uno dei miei pazienti non riusciva a sollevare il braccio da mesi. Aveva già provato diversi trattamenti, ma la spalla continuava a fare male. Dopo la valutazione, ho individuato la causa in un blocco della mano. <strong>In 5-6 sedute, lavorando sulla mano, il movimento della spalla è tornato completamente.</strong><br><br>
-    Il corpo è tutto connesso. Il dolore che senti in un punto può nascere in un posto completamente diverso — e finché non trovi la vera causa, il problema non si risolve.</p>
-  </div>
-</div>
-
-<!-- HERO CON FORM -->
-<div class="hero" role="region" aria-label="Hero">
-  <div class="hero-visual"></div>
-  <div class="hero-content">
-    <div class="hero-text">
-      <h1>Hai dolore alla spalla, al gomito o al polso? La causa potrebbe essere altrove.</h1>
-      <p class="lead">Prenota la tua <strong>valutazione gratuita</strong> a <strong>Ponte Felcino (Perugia)</strong> — un primo incontro per trovare la vera origine del dolore e costruire un percorso su misura per te.</p>
-      <ul class="benefits">
-        <li><strong>Approccio manuale e mirato:</strong> Manipolazione Fasciale per intervenire sulla radice del problema, non solo sul sintomo.</li>
-        <li><strong>Senza macchinari:</strong> Un lavoro profondo, fatto con le mani, che dà risultati concreti e duraturi.</li>
-        <li><strong>Risultati già dalle prime sedute:</strong> In 3–4 sedute la maggior parte dei pazienti sente un miglioramento importante.</li>
-        <li><strong>Percorso chiaro e personalizzato:</strong> Spiegazione del problema e piano di trattamento su misura per te.</li>
-      </ul>
+    <!-- Caso reale -->
+    <div class="hero-case">
+      <span class="case-label">📖 Caso reale</span>
+      <p>Un mio paziente <strong>non riusciva ad alzare il braccio da mesi</strong>. Aveva già provato diversi trattamenti, ma la spalla continuava a fare male. Dopo la valutazione, ho individuato la causa in un blocco della mano. <strong>In 5–6 sedute, lavorando sulla mano, il movimento della spalla è tornato completamente.</strong><br><br>
+      Il corpo è tutto connesso. Il dolore che senti in un punto può nascere in un posto completamente diverso — e finché non trovi la vera causa, il problema non si risolve.</p>
     </div>
 
-    <aside>
-      <div class="card-form" role="form" aria-label="Modulo prenotazione valutazione" id="fisiomotion-form">
-        <h3>Prenota la valutazione gratuita</h3>
-        <div class="form-offer">🎁 Offerta valida fino al 31/03 — rimasti pochi posti</div>
-        <p class="small">Compila i tuoi dati, ti ricontatterò personalmente per fissare l'appuntamento.</p>
+    <h1>Hai dolore alla spalla, al gomito o al polso? La causa potrebbe essere altrove.</h1>
+    <p class="hero-sub">
+      Prenota la tua valutazione gratuita a Ponte Felcino (Perugia) — un primo incontro per trovare la vera origine del dolore e costruire un percorso su misura per te.
+    </p>
 
-        <form id="fisiomotion-form-form">
-          <div class="field"><input type="text" name="nome" placeholder="Il tuo nome" required></div>
-          <div class="field"><input type="tel" name="telefono" placeholder="Telefono" required></div>
-          <div class="field"><textarea name="messaggio" placeholder="Raccontami brevemente il tuo problema (facoltativo)"></textarea></div>
-          <button class="btn-primary" type="submit">Prenota la valutazione gratuita</button>
-        </form>
+    <!-- CTA 1 -->
+    <a href="#contatto" class="btn-cta">🎁 PRENOTA LA VALUTAZIONE GRATUITA</a>
+    <a href="https://wa.me/393495719341" class="btn-wa" target="_blank">💬 SCRIVIMI SU WHATSAPP</a>
 
-        <div class="small-quiet">Oppure scrivimi su WhatsApp: <a href="https://wa.me/393495719341" style="color:var(--accent-2);text-decoration:none;font-weight:600;">349 571 9341</a></div>
-      </div>
-    </aside>
   </div>
-</div>
+</section>
 
-<a href="#fisiomotion-form" class="btn-scroll">📅 Prenota la valutazione gratuita</a>
+<!-- OFFERTA -->
+<section class="offer-section" id="offerta">
+  <div class="section-wrap">
+    <!-- Foto trattamento -->
+    <div style="width:100%;max-width:560px;border-radius:8px;margin:0 auto 1.8rem;background:#e8f0fe;height:260px;display:flex;align-items:center;justify-content:center;color:#555;border:2px dashed #aac;font-size:.95rem;">
+      📷 [Inserisci qui una foto del trattamento]
+    </div>
+
+    <div class="badge-urgency">⏳ Offerta valida fino al 31/03 — rimasti pochi posti</div>
+
+    <h2>Richiedi la tua Valutazione Gratuita, che include:</h2>
+
+    <div class="price-box">
+      Prima visita + Valutazione Completa<br>
+      <span class="price-new">GRATUITA</span> (invece di <span class="price-old">50€</span>)
+    </div>
+
+    <!-- CTA 2 -->
+    <a href="#contatto" class="btn-cta">✅ VOGLIO LA VALUTAZIONE GRATUITA</a>
+  </div>
+</section>
+
+<!-- VECCHI METODI -->
+<section class="blue-section">
+  <h2>Stai Ancora Usando i Vecchi Metodi?</h2>
+
+  <div class="problem-card">
+    <div class="icon-circle">💊</div>
+    <h3>Antidolorifici che coprono il sintomo senza risolvere la causa</h3>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon-circle">⚡</div>
+    <h3>Terapie fisiche (TENS, ultrasuoni) che danno sollievo temporaneo</h3>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon-circle">🤲</div>
+    <h3>Massaggi generici che non individuano l'origine del dolore</h3>
+  </div>
+
+  <div class="problem-card">
+    <div class="icon-circle">🔄</div>
+    <h3>Trattamenti ripetuti senza mai risolvere davvero il problema</h3>
+  </div>
+</section>
 
 <!-- COME FUNZIONA -->
-<div class="how-section">
-  <h2>Come funziona la Manipolazione Fasciale</h2>
-  <div class="how-grid">
-    <div class="how-card">
-      <div class="icon">🔍</div>
-      <h4>1. Valutazione</h4>
-      <p>Analizziamo la tua storia clinica e individuiamo la vera origine del dolore — che spesso non è dove lo percepisci.</p>
+<section style="background:#f8f9ff;padding:2.5rem 1.5rem;">
+  <div class="section-wrap">
+    <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,7vw,2.6rem);font-weight:700;text-align:center;margin-bottom:2rem;">Come Funziona la Manipolazione Fasciale</h2>
+
+    <div class="step-item">
+      <div class="step-icon">🔍</div>
+      <div>
+        <h3>1. Valutazione</h3>
+        <p>Analizziamo la tua storia clinica e individuiamo la vera origine del dolore — che spesso non è dove lo percepisci.</p>
+      </div>
     </div>
-    <div class="how-card">
-      <div class="icon">🖐️</div>
-      <h4>2. Trattamento manuale</h4>
-      <p>Lavoro sulla fascia connettivale con le mani, su punti precisi e interconnessi. Un lavoro profondo e mirato.</p>
+
+    <div class="step-item">
+      <div class="step-icon">🖐️</div>
+      <div>
+        <h3>2. Trattamento Manuale</h3>
+        <p>Lavoro sulla fascia connettivale con le mani, su punti precisi e interconnessi. Un lavoro profondo e mirato, senza macchinari.</p>
+      </div>
     </div>
-    <div class="how-card">
-      <div class="icon">✅</div>
-      <h4>3. Risultati concreti</h4>
-      <p>In poche sedute la maggior parte dei pazienti recupera mobilità e qualità della vita, in modo duraturo.</p>
+
+    <div class="step-item">
+      <div class="step-icon">✅</div>
+      <div>
+        <h3>3. Risultati Concreti</h3>
+        <p>In poche sedute la maggior parte dei pazienti recupera mobilità e qualità della vita, in modo duraturo.</p>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<main class="section" role="main">
-  <div class="info-section">
-    <img src="foto-riccardo.jpg" alt="Riccardo Fiocchetti - Massofisioterapista">
+<!-- COSA OTTERRAI -->
+<section class="what-section">
+  <h2>Cosa Otterrai Nella Prima Seduta?</h2>
+
+  <div class="check-item">
+    <div class="check-icon">✓</div>
     <div>
-      <div class="whoami">
-        <h3>Chi sono</h3>
-        <p>Sono <strong>Riccardo Fiocchetti</strong>, massofisioterapista con 15 anni di esperienza a Ponte Felcino (Perugia). Lavoro con un approccio manuale e personalizzato per trattare dolori muscolari e articolari: il mio obiettivo è che torni a muoverti serenamente.</p>
-        <p>La mia tecnica principale è la <strong>Manipolazione Fasciale (metodo Stecco)</strong> — un approccio che non cura il sintomo, ma cerca e risolve la causa profonda del dolore.</p>
-      </div>
-
-      <div class="whoami">
-        <h3>Cosa posso aiutare a risolvere</h3>
-        <ul>
-          <li>Mal di schiena e lombalgia (anche di origine lontana)</li>
-          <li>Dolore alla spalla, gomito e polso</li>
-          <li>Cervicale e mal di testa muscolo-tensivo</li>
-          <li>Sciatalgia, dolori a ginocchio, anca e caviglia</li>
-          <li>Cervicale legata al bruxismo</li>
-          <li>Mal di schiena legato al ciclo mestruale</li>
-        </ul>
-      </div>
-
-      <div class="whoami">
-        <h3>Perché scegliere questo approccio</h3>
-        <p>Molti trattamenti curano il sintomo. Io indago la causa e lavoro sul tessuto fasciale per ripristinare la funzione. Il trattamento può essere intenso ma è mirato: i risultati sono concreti e duraturi.</p>
-      </div>
+      <h3>Valutazione Completa:</h3>
+      <p>Osservo la tua storia clinica, individuo i compensi posturali e cerco la vera origine del dolore — che spesso non è dove lo senti.</p>
     </div>
   </div>
 
-  <div class="whoami" style="margin-top:20px;">
-    <h3>Dove e orari</h3>
-    <div class="orari">
-      <div class="label">Orari</div>
-      <div class="time"><strong>Lunedì – Sabato: 8:30 – 13:00</strong></div>
+  <div class="check-item">
+    <div class="check-icon">✓</div>
+    <div>
+      <h3>Approccio Manuale con Manipolazione Fasciale:</h3>
+      <p>Lavoro sulla fascia connettivale con un metodo preciso (metodo Stecco). Non curo il sintomo, cerco e risolvo la causa profonda.</p>
     </div>
-    <p style="margin-top:20px; text-align:center;">
-      Studio Fisiomotion — <strong>Via Giacomo Puccini, 63</strong><br>
-      Ponte Felcino (Perugia)<br>
-      📞 <strong>349 571 9341</strong>
-    </p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2881.409007809932!2d12.438489615502142!3d43.13316607914154!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x132c2020fceeaaab%3A0xad8dde1d9809c1c0!2sVia%20Giacomo%20Puccini%2C%2063%2C%2006134%20Perugia%20PG!5e0!3m2!1sit!2sit!4v1697293440000!5m2!1sit!2sit" allowfullscreen="" loading="lazy"></iframe>
   </div>
-</main>
 
-<footer class="site-footer">
-  © <span id="year"></span> Fisiomotion — Riccardo Fiocchetti • Ponte Felcino (Perugia)
+  <div class="check-item">
+    <div class="check-icon">✓</div>
+    <div>
+      <h3>Piano di Trattamento Personalizzato:</h3>
+      <p>Ti spiego esattamente cosa sta succedendo e costruiamo insieme un percorso su misura — chiaro, concreto e senza sprechi di tempo.</p>
+    </div>
+  </div>
+
+  <div class="check-item">
+    <div class="check-icon">✓</div>
+    <div>
+      <h3>Risultati già dalle prime sedute:</h3>
+      <p>In 3–4 sedute la maggior parte dei pazienti sente un miglioramento importante. Nessuna promessa vaga — risultati reali e duraturi.</p>
+    </div>
+  </div>
+
+  <!-- CTA 3 -->
+  <a href="#contatto" class="btn-cta mt-btn">🚀 PRENOTA ORA – POSTI LIMITATI</a>
+</section>
+
+<!-- URGENCY -->
+<div class="urgency-strip">⚠️ SOLO PER I PRIMI 10 PAZIENTI — POSTI LIMITATI!</div>
+
+<!-- TESTIMONIANZE -->
+<section class="testimonials">
+  <h2>Cosa Dicono i Pazienti</h2>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"Non riuscivo ad alzare il braccio da mesi. Dopo la valutazione con Riccardo, ho scoperto che il problema era nella mano. In poche sedute il movimento è tornato completamente. Incredibile."</p>
+    <div class="reviewer"><div class="reviewer-avatar">👨</div><span class="reviewer-name">Marco T.</span></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"Soffrivo di mal di schiena cronico da anni. Riccardo ha trovato la causa reale in poche sedute. Nessun altro ci era riuscito prima. Professionalità e competenza al massimo livello."</p>
+    <div class="reviewer"><div class="reviewer-avatar">👩</div><span class="reviewer-name">Giulia M.</span></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"Avevo dolore alla cervicale da mesi. Già dopo la prima seduta ho sentito una differenza enorme. Ti spiega tutto con chiarezza e lavora in modo preciso e mirato."</p>
+    <div class="reviewer"><div class="reviewer-avatar">👩‍💼</div><span class="reviewer-name">Sara P.</span></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"Il mio ginocchio mi impediva di camminare normalmente. Con la Manipolazione Fasciale ho recuperato mobilità e qualità della vita. Lo consiglio a tutti!"</p>
+    <div class="reviewer"><div class="reviewer-avatar">👴</div><span class="reviewer-name">Roberto B.</span></div>
+  </div>
+
+  <div class="review-card">
+    <div class="stars">★★★★★</div>
+    <p class="review-text">"Ho provato tanti trattamenti prima di arrivare da Riccardo. Questo è l'unico approccio che ha risolto davvero il problema, non solo coperto il dolore."</p>
+    <div class="reviewer"><div class="reviewer-avatar">🤓</div><span class="reviewer-name">Alessia N.</span></div>
+  </div>
+</section>
+
+<!-- CHI SONO -->
+<section class="about-section">
+  <h2>Chi Sono</h2>
+
+  <!-- Sostituisci con img src="https://www.fisiomotion.it/foto-riccardo.jpg" -->
+  <div class="about-photo-ph">
+    📷 Riccardo Fiocchetti<br><small>(carica la tua foto)</small>
+  </div>
+
+  <div class="about-quote">
+    Sono <strong>Riccardo Fiocchetti</strong>, massofisioterapista con <strong>15 anni di esperienza</strong> a Ponte Felcino (Perugia).<br><br>
+    Lavoro con un approccio manuale e personalizzato per trattare dolori muscolari e articolari: il mio obiettivo è che torni a muoverti serenamente.<br><br>
+    La mia tecnica principale è la <strong>Manipolazione Fasciale (metodo Stecco)</strong> — un approccio che non cura il sintomo, ma cerca e risolve la <strong>causa profonda del dolore</strong>.<br><br>
+    Se cerchi un terapista di fiducia per ritrovare movimento e benessere, sono qui per te.
+  </div>
+</section>
+
+<!-- PROBLEMI CHE RISOLVO -->
+<section class="problems-list">
+  <h2>Cosa Posso Aiutarti a Risolvere</h2>
+  <div class="prob-item"><div class="prob-dot"></div>Mal di schiena e lombalgia (anche di origine lontana)</div>
+  <div class="prob-item"><div class="prob-dot"></div>Dolore alla spalla, gomito e polso</div>
+  <div class="prob-item"><div class="prob-dot"></div>Cervicale e mal di testa muscolo-tensivo</div>
+  <div class="prob-item"><div class="prob-dot"></div>Sciatalgia, dolori a ginocchio, anca e caviglia</div>
+  <div class="prob-item"><div class="prob-dot"></div>Cervicale legata al bruxismo</div>
+  <div class="prob-item"><div class="prob-dot"></div>Mal di schiena legato al ciclo mestruale</div>
+</section>
+
+<!-- INDIRIZZO + FORM -->
+<section class="address-section" id="contatto">
+  <h2>Dove Siamo e Orari</h2>
+
+  <div class="address-block">
+    <h3>Studio Fisiomotion</h3>
+    <p>Via Giacomo Puccini, 63 — Ponte Felcino (Perugia)</p>
+    <div class="map-placeholder">🗺️ Inserisci qui embed Google Maps</div>
+  </div>
+
+  <div class="orari-box">
+    <h3>🕗 Orari</h3>
+    <p>Lunedì – Sabato: <strong>8:30 – 13:00</strong></p>
+  </div>
+
+  <div class="form-box">
+    <h3>Prenota la Valutazione Gratuita</h3>
+    <p>🎁 Offerta valida solo per i primi 10 pazienti fino al 31/03. Compila i tuoi dati, ti ricontatterò personalmente.</p>
+    <input class="form-input" type="text" placeholder="Il tuo nome e cognome"/>
+    <input class="form-input" type="tel" placeholder="Il tuo numero di telefono"/>
+    <input class="form-input" type="email" placeholder="La tua email (opzionale)"/>
+    <input class="form-input" type="text" placeholder="Dove senti dolore? (es. spalla destra)"/>
+    <a href="tel:+393495719341" class="btn-cta" style="max-width:100%">📞 PRENOTA ORA — 349 571 9341</a>
+    <a href="https://wa.me/393495719341" class="btn-wa" target="_blank" style="max-width:100%">💬 OPPURE SCRIVIMI SU WHATSAPP</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 – Fisiomotion | Riccardo Fiocchetti<br>
+  Via Giacomo Puccini, 63 — Ponte Felcino (Perugia)<br>
+  📞 349 571 9341<br><br>
+  Questo sito non fa parte di Facebook o Facebook Inc.<br>
+  FACEBOOK è un marchio registrato di FACEBOOK, Inc.</p>
+  <p style="margin-top:1rem">
+    <a href="#">Privacy Policy</a> – <a href="#">Cookie Policy</a>
+  </p>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-  (function(){ emailjs.init("NPqLkH-WtLNXHt9mV"); })();
-
-  const form = document.getElementById('fisiomotion-form-form');
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    const btn = form.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Invio in corso…';
-
-    emailjs.sendForm('service_fzlggc1','template_061fhg7', this)
-      .then(function(){
-        fbq('track', 'Lead');
-        window.location.href = 'grazie.html';
-      }, function(err){
-        console.error('EmailJS error', err);
-        alert('Si è verificato un errore durante l\'invio. Riprovare più tardi o contattami su WhatsApp.');
-        btn.disabled = false;
-        btn.textContent = 'Prenota la valutazione gratuita';
-      });
-  });
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
