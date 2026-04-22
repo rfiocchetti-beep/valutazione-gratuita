@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prenota – Fisiomotion</title>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4336943133255553');
+fbq('track', 'PageView');
+fbq('track', 'Lead');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=4336943133255553&ev=PageView&noscript=1"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#111;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:2.5rem 1.2rem 3rem;}
+h1{font-size:clamp(2.2rem,10vw,3.2rem);font-weight:700;text-align:center;line-height:1.15;margin-bottom:2.2rem;}
+.form-wrap{width:100%;max-width:480px;}
+label{display:block;font-size:1rem;font-weight:700;margin-bottom:.45rem;color:#111;}
+input[type="text"],input[type="email"]{width:100%;padding:.95rem 1rem;border:1.5px solid #ccc;border-radius:8px;font-size:1rem;font-family:'Open Sans',sans-serif;color:#111;margin-bottom:1.6rem;transition:border .2s;}
+input[type="text"]:focus,input[type="email"]:focus{outline:none;border-color:#1877F2;}
+.tel-wrap{display:flex;border:1.5px solid #ccc;border-radius:8px;overflow:hidden;margin-bottom:1.6rem;transition:border .2s;}
+.tel-wrap:focus-within{border-color:#1877F2;}
+.tel-prefix{display:flex;align-items:center;gap:.35rem;padding:0 .85rem;background:#fff;border-right:1.5px solid #ccc;font-size:1rem;font-weight:600;white-space:nowrap;}
+.tel-prefix span{font-size:1.3rem;}
+input[type="tel"]{flex:1;border:none;outline:none;padding:.95rem .9rem;font-size:1rem;font-family:'Open Sans',sans-serif;color:#111;background:transparent;}
+.email-wrap{position:relative;margin-bottom:1.6rem;}
+.email-icon{position:absolute;left:1rem;top:50%;transform:translateY(-50%);font-size:1.1rem;color:#888;pointer-events:none;}
+.email-wrap input[type="email"]{padding-left:2.6rem;margin-bottom:0;}
+.privacy-row{display:flex;align-items:flex-start;gap:.75rem;margin-bottom:2rem;}
+.privacy-row input[type="checkbox"]{width:20px;height:20px;flex-shrink:0;margin-top:.15rem;cursor:pointer;accent-color:#1877F2;}
+.privacy-row label{font-size:.97rem;font-weight:400;color:#111;line-height:1.5;margin-bottom:0;cursor:pointer;}
+.privacy-row label a{color:#1877F2;text-decoration:underline;}
+.btn-submit{display:block;width:100%;background:#E82626;color:#fff;font-size:clamp(1.3rem,6vw,1.7rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1.2rem 1rem;border:none;border-radius:10px;cursor:pointer;transition:background .2s,transform .12s;line-height:1.25;}
+.btn-submit:hover{background:#c41e1e;transform:scale(1.02)}
+.btn-submit:active{transform:scale(.98)}
+.btn-submit:disabled{background:#aaa;cursor:not-allowed;transform:none;}
+.success{text-align:center;padding:2.5rem 1rem;}
+.success .check{font-size:3.5rem;margin-bottom:1rem;}
+.success h2{font-size:1.7rem;font-weight:700;color:#27AE60;margin-bottom:.8rem;}
+.success p{font-size:1rem;color:#444;line-height:1.65;}
+.success .btn-wa{display:inline-block;margin-top:1.5rem;background:#25D366;color:#fff;font-weight:700;font-size:1rem;padding:.9rem 1.8rem;border-radius:8px;text-decoration:none;}
+</style>
+</head>
+<body>
+<div class="form-wrap">
+  <h1>COMPILA IL MODULO</h1>
+  <div id="formContainer">
+    <form id="leadForm" onsubmit="handleSubmit(event)" novalidate>
+      <label for="nome">Nome e Cognome *</label>
+      <input type="text" id="nome" name="nome" placeholder="Es. Mario Rossi" required/>
+
+      <label for="tel">Numero di Telefono *</label>
+      <div class="tel-wrap">
+        <div class="tel-prefix"><span>🇮🇹</span><small>+39</small></div>
+        <input type="tel" id="tel" name="telefono" placeholder="es. 3334445556" required/>
+      </div>
+
+      <label for="email">Email per la Conferma *</label>
+      <div class="email-wrap">
+        <span class="email-icon">✉️</span>
+        <input type="email" id="email" name="email" placeholder="es. mariorossi@gmail.com" required/>
+      </div>
+
+      <div class="privacy-row">
+        <input type="checkbox" id="privacy" name="privacy" required/>
+        <label for="privacy">Acconsento al trattamento dei miei dati e dichiaro di aver preso visione della <a href="#">Privacy Policy</a></label>
+      </div>
+
+      <button type="submit" class="btn-submit" id="submitBtn">PRENOTA ORA<br>A 49€</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const nome    = document.getElementById('nome').value.trim();
+  const tel     = document.getElementById('tel').value.trim();
+  const email   = document.getElementById('email').value.trim();
+  const privacy = document.getElementById('privacy').checked;
+  if (!nome || !tel || !email || !privacy) {
+    alert('Compila tutti i campi obbligatori e accetta la Privacy Policy.');
+    return;
+  }
+  const btn = document.getElementById('submitBtn');
+  btn.disabled = true;
+  btn.textContent = 'Invio in corso...';
+  fbq('track', 'CompleteRegistration', {value: 49, currency: 'EUR'});
+  setTimeout(() => {
+    window.location.href = 'grazie.html';
+  }, 600);
+}
+</script>
+</body>
+</html>
