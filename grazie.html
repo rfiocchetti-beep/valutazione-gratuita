@@ -1,90 +1,57 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Grazie - Fisiomotion</title>
-
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Meta Pixel Code -->
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Grazie! – Fisiomotion</title>
+<!-- Meta Pixel -->
 <script>
-  !function(f,b,e,v,n,t,s)
-  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-  n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];
-  s.parentNode.insertBefore(t,s)}(window, document,'script',
-  'https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '4336943133255553'); // inserisci qui il tuo Pixel ID
-  fbq('track', 'PageView');
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '4336943133255553');
+fbq('track', 'PageView');
+fbq('track', 'Purchase', {value: 49, currency: 'EUR'});
 </script>
 <noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=4336943133255553&ev=PageView&noscript=1"
-/></noscript>
-
+src="https://www.facebook.com/tr?id=4336943133255553&ev=PageView&noscript=1"/></noscript>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"/>
 <style>
-  body{
-    margin:0;
-    font-family:'Poppins',sans-serif;
-    background:#f4f8fa;
-    text-align:center;
-    padding:40px;
-    color:#03393f;
-  }
-  h1{font-size:28px;margin-bottom:12px;}
-  p{color:#304a4a;font-size:16px;}
-  strong{color:#000;}
-  .orari {
-    margin-top:18px;
-    background:#fff;
-    display:inline-block;
-    padding:12px 16px;
-    border-radius:10px;
-    box-shadow:0 4px 12px rgba(0,0,0,0.05);
-  }
-  .orari .time{font-weight:800;}
-  a.btn{
-    display:inline-block;
-    margin-top:24px;
-    background:#04d2da;
-    color:#fff;
-    padding:12px 20px;
-    border-radius:10px;
-    text-decoration:none;
-    font-weight:600;
-    transition: background 0.3s;
-  }
-  a.btn:hover{background:#029ca3;}
-  .whatsapp-btn{
-    display:inline-block;
-    margin-top:20px;
-    background-color:#25D366;
-    color:#fff;
-    padding:12px 24px;
-    border-radius:50px;
-    text-decoration:none;
-    font-weight:600;
-    transition: background 0.3s;
-  }
-  .whatsapp-btn:hover{background-color:#1ebe57;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;background:#fff;color:#111;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:2rem 1.2rem;}
+.card{max-width:480px;width:100%;text-align:center;padding:2.5rem 1.8rem;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,.1);}
+.check{font-size:4rem;margin-bottom:1rem;}
+h1{font-family:'Oswald',sans-serif;font-size:2.2rem;font-weight:700;color:#27AE60;margin-bottom:1rem;line-height:1.2;}
+.sub{font-size:1.05rem;color:#444;line-height:1.7;margin-bottom:2rem;}
+.box-info{background:#f0f6ff;border-radius:10px;padding:1.2rem;margin-bottom:2rem;border-left:4px solid #1877F2;text-align:left;}
+.box-info p{font-size:.95rem;color:#333;line-height:1.65;}
+.box-info strong{color:#0d3f8f;}
+.btn-wa{display:block;width:100%;background:#25D366;color:#fff;font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:1.1rem;border-radius:8px;text-decoration:none;margin-bottom:1rem;transition:background .2s;}
+.btn-wa:hover{background:#1eb358;}
+.btn-back{display:block;text-align:center;font-size:.9rem;color:#1877F2;text-decoration:none;margin-top:.5rem;}
+.btn-back:hover{text-decoration:underline;}
+.stars{color:#F5A623;font-size:1.5rem;letter-spacing:.1em;margin-bottom:1.5rem;}
 </style>
 </head>
 <body>
-  <h1>Grazie per avermi contattato!</h1>
-  <p>Ti risponderò il prima possibile per fissare la tua valutazione gratuita, oppure scrivimi su WhatsApp.</p>
+<div class="card">
+  <div class="check">✅</div>
+  <div class="stars">★★★★★</div>
+  <h1>Richiesta Inviata!</h1>
+  <p class="sub">Grazie per aver prenotato!<br>
+  <strong>Riccardo ti ricontatterà entro 24 ore</strong> per confermare il tuo appuntamento.</p>
 
-  <div class="orari">
-    <div class="label">Orari</div>
-    <div class="time"><strong>Lunedì – Sabato: 8:30 – 13:00</strong></div>
+  <div class="box-info">
+    <p>📍 <strong>Studio Fisiomotion</strong><br>
+    Via Giacomo Puccini, 63 — Ponte Felcino (Perugia)<br><br>
+    🕗 <strong>Orari:</strong> Lunedì – Sabato: 8:30 – 13:00<br><br>
+    📞 <strong>349 571 9341</strong></p>
   </div>
 
-  <div>
-    <a class="whatsapp-btn" href="https://wa.me/393495719341" target="_blank">
-      Scrivimi su WhatsApp
-    </a>
-  </div>
+  <a href="https://wa.me/393495719341" class="btn-wa">💬 SCRIVIMI SU WHATSAPP</a>
+  <a href="index.html" class="btn-back">← Torna alla pagina principale</a>
+</div>
 </body>
 </html>
