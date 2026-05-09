@@ -83,10 +83,10 @@ input[type="tel"]{flex:1;border:none;outline:none;padding:.95rem .9rem;font-size
   document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
+    const nome     = document.getElementById('nome').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const privacy = document.getElementById('privacy').checked;
+    const email    = document.getElementById('email').value.trim();
+    const privacy  = document.getElementById('privacy').checked;
 
     if (!nome || !telefono || !email || !privacy) {
       alert('Compila tutti i campi obbligatori e accetta la Privacy Policy.');
