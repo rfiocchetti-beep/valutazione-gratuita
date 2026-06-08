@@ -83,10 +83,10 @@ input[type="tel"]{flex:1;border:none;outline:none;padding:.95rem .9rem;font-size
   document.getElementById('leadForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const nome = document.getElementById('nome').value.trim();
+    const nome     = document.getElementById('nome').value.trim();
     const telefono = document.getElementById('telefono').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const privacy = document.getElementById('privacy').checked;
+    const email    = document.getElementById('email').value.trim();
+    const privacy  = document.getElementById('privacy').checked;
 
     if (!nome || !telefono || !email || !privacy) {
       alert('Compila tutti i campi obbligatori e accetta la Privacy Policy.');
@@ -102,9 +102,11 @@ input[type="tel"]{flex:1;border:none;outline:none;padding:.95rem .9rem;font-size
       .then(function() {
         // ✅ Lead sparato SOLO dopo compilazione e invio riuscito
         fbq('track', 'Lead');
-        fbq('track', 'CompleteRegistration', {value: 49, currency: 'EUR'});
-        // Vai alla pagina di ringraziamento
-        window.location.href = 'grazie.html';
+        // Piccolo ritardo per dare tempo al pixel di registrare Lead
+        setTimeout(function() {
+          fbq('track', 'CompleteRegistration', {value: 49, currency: 'EUR'});
+          window.location.href = 'grazie.html';
+        }, 800);
       }, function(err) {
         console.error('EmailJS error', err);
         alert('Errore durante l\'invio. Riprova o contattami su WhatsApp al 349 571 9341.');
