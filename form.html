@@ -100,11 +100,8 @@ input[type="tel"]{flex:1;border:none;outline:none;padding:.95rem .9rem;font-size
     // Invia email tramite EmailJS
     emailjs.sendForm('service_fzlggc1', 'template_061fhg7', this)
       .then(function() {
-        // ✅ Lead sparato SOLO dopo compilazione e invio riuscito
         fbq('track', 'Lead');
-        // Piccolo ritardo per dare tempo al pixel di registrare Lead
         setTimeout(function() {
-          fbq('track', 'CompleteRegistration', {value: 49, currency: 'EUR'});
           window.location.href = 'grazie.html';
         }, 800);
       }, function(err) {
